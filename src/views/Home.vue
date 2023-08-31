@@ -28,7 +28,7 @@
 
 <script>
 
-import dadJokesService from '../services/DadJokeService';
+import dadJokeService from '../services/DadJokeService';
 
 export default {
   name: "home",
@@ -45,7 +45,7 @@ export default {
     }
   },
   created() {
-    dadJokesService.getRandomDadJoke().then((response) => {
+    dadJokeService.getRandomDadJoke().then((response) => {
       this.randomDadJoke = response.data;
     })
   }

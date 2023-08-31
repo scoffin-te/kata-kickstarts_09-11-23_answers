@@ -28,7 +28,7 @@ npm run serve
 
 ## Icebreakers
 
-### Kata #1
+### Kata #1: Data-bind the homepage header
 
 The h1 in Home.vue is currently static HTML.
 
@@ -37,7 +37,7 @@ The h1 in Home.vue is currently static HTML.
 
 Reminder: One-way data-binding means that changes to the data in the script are reflected in the HTML when rendered.
 
-### Kata #2
+### Kata #2: Data-bind the homepage name field
 
 The input in Home.vue is currently static HTML.
 
@@ -46,7 +46,7 @@ The input in Home.vue is currently static HTML.
 
 Reminder: Two-way data-binding means that changes to the data in the script are reflects in the HTML and vice versa when rendered.
 
-### Kata #3
+### Kata #3: Create a list item for each element in the hobbies array
 
 The hobbies array is a data property holding several elements. We need to display them on the homepage.
 
@@ -55,27 +55,38 @@ The hobbies array is a data property holding several elements. We need to displa
 
 ## Breakout rooms
 
-### Kata #4
+### Kata #4: Link the navbar items to views
 
-Our homepage currently has anav items that aren't linked to anything.
+Our homepage currently has nav items that aren't linked to anything.
 
-- In router/index.js, setup routes for the homepage and "About us" page
-- Then, in App.vue, setup a link to these routes in the nav.
+- In router/index.js, setup routes for the homepage and "About Us" page
+- Then, in App.vue, replace the <spans> in the nav with routed links.
 
-### Kata #5
+### Kata #5: Build and import a component
 
-Our homepage currently has anav items that aren't linked to anything.
+On the "About Us" page, there is a static header for and list of contact information.
 
-- In router/index.js, setup routes for the homepage and "About us" page.
-- Then, in App.vue, setup a link to these routes in the nav.
+- Build a separate component for this HTML in ContactInfo.vue.
+- Then, import it back into AboutUs.vue.
 
-### Kata #6
+### Kata #6: Centralize data in the Vuex datastore
 
-Our "words to live by" are sage and may be needed on other pages of the app.
+Our "words to live by" are sage and may be needed in other places in the app outside of the homepage.
 
 - Remove the static HTML for this timeless phrase and place it in a centralized variable in the Vuex datastore.
 - Then, pull that Vuex variable into the homepage.
 ​
 ## Challenge
 
-### Kata #7 
+### Kata #7: Consume an external API
+
+Sadly, there's an empty space for a "Dad Joke of the Day" on our homepage! We need to use axios to call the icanhazdadjoke API to get one.
+
+Open services/DadJokeService.js and view the comments.
+- Then, import axios and create an instance of it to use in your requests.
+- Next, write the request methods to hit the endpoint.
+- Finally, to get just the joke from the API response, create a config that only accepts plain text.
+
+Go back to Home.vue.
+- Add the created() lifecycle hook to the script. Inside it, setup a call to the axios method we just wrote, setting the value of randomDadJoke to the response data.
+- Use data-binding to insert the randomDadJoke value into the em element next to "Dad Joke of the Day."
