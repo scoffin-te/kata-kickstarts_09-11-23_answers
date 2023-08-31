@@ -1,20 +1,35 @@
 <template>
   <div class="home">
     <h1>{{ header }}</h1>
+    
+    <br>
+
     <label>What is your name?</label><br>
     <input class="input" type="text" v-model="user">
     <p>Oh... So your name is {{ user }}!</p>
+  
     <div>
       <p>Hobbies:</p>
       <ul id="hobbies">
         <li v-for="hobby in hobbies" v-bind:key="hobby.id">{{ hobby }}</li>
       </ul>
     </div>
-    <div><span>Words to live by: </span>{{ $store.state.wordsToLiveBy }}</div>
+
+    <br>
+
+    <div>Words to live by: <em>{{ $store.state.wordsToLiveBy }}</em></div>
+
+    <br>
+
+    <div>Dad Joke of the Day: <em>{{ randomDadJoke }}</em></div>
+
   </div>
 </template>
 
 <script>
+
+import dadJokesService from '../services/DadJokeService';
+
 export default {
   name: "home",
   data() {
@@ -25,8 +40,14 @@ export default {
         "Cheese rolling",
         "Astral projection",
         "Electric fencing"
-      ]
+      ],
+      randomDadJoke: ""
     }
+  },
+  created() {
+    dadJokesService.getRandomDadJoke().then((response) => {
+      this.randomDadJoke = response.data;
+    })
   }
 };
 </script>
