@@ -3,7 +3,7 @@
     <h1>{{ header }}</h1>
     <label>What is your name?</label><br>
     <input class="input" type="text" v-model="user">
-    <p>Oh... So your name is {{ user }}?</p>
+    <p>Oh... So your name is {{ user }}!</p>
     <div>
       <p>Hobbies:</p>
       <ul id="hobbies">

@@ -5,7 +5,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    wordsToLiveBy: 'You can lead a horse to Visual Studio, but you can\'t make him code.'
+    wordsToLiveBy: 'We shouldn never take things for granite.'
   },
   mutations: {
 
