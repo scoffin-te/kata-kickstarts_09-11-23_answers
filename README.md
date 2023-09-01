@@ -1,30 +1,24 @@
-# Kata Kickstarts - Vue (September 11, 2023)
+# Kata Kickstarts - Vue (September 12, 2023)
 ​
-This is a small Vue project scaled-down from the capstone starter code. This document walks you through how to set up and run the project, as well as providing a handful of katas to work on in the code.
+This is a small Vue project scaled-down from the capstone starter code. The back-end has been removed so we can focus on the front-end. 
+
+This document walks you through how to set up and run the project, as well as providing a handful of katas to work on in the code.
 ​
 ## Project setup
 ​
-The first thing you'll need to do is to download any dependencies by running this command:
+(1) The first thing you'll need to do is to download any dependencies by running this command:
 ​
 ```
 npm install
 ```
 
-**.NET**
-```
-VUE_APP_REMOTE_API=https://localhost:44358
-```
-
-**Java**
-```
-VUE_APP_REMOTE_API=http://localhost:9000
-```
-
-Start your Vue application with the following command:
+(2) Start your Vue application with the following command:
 ​
 ```
 npm run serve
 ```
+
+(3) Click on the localhost link that appears to open the application in a browser.
 
 ## Icebreakers
 
@@ -90,3 +84,12 @@ Open services/DadJokeService.js and view the comments.
 Go back to Home.vue.
 - Add the created() lifecycle hook to the script. Inside it, setup a call to the axios method we just wrote, setting the value of randomDadJoke to the response data.
 - Use data-binding to insert the randomDadJoke value into the em element next to "Dad Joke of the Day."
+
+## Bonus 
+
+### Kata #8: Call the API with a button
+
+It's nice to get a hilarious joke once per visit, but wouldn't it be nicer to be able to generate as many as you want?
+
+- Refactor the Home.vue script to use a method to generate a random dad joke.
+- Add a button to the template that is setup with an event listener that reacts by changing the text next to "Dad Joke of the Day."
