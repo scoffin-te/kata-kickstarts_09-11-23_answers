@@ -22,6 +22,7 @@
     <br>
 
     <div>Dad Joke of the Day: <em>{{ randomDadJoke }}</em></div>
+    <button v-on:click="generateRandomDadJoke">Generate hilarious joke</button>
 
   </div>
 </template>
@@ -45,9 +46,17 @@ export default {
     }
   },
   created() {
-    dadJokeService.getRandomDadJoke().then((response) => {
-      this.randomDadJoke = response.data;
-    })
+    // dadJokeService.getRandomDadJoke().then((response) => {
+    //   this.randomDadJoke = response.data;
+    // });
+    this.generateRandomDadJoke();
+  },
+  methods: {
+    generateRandomDadJoke() {
+      dadJokeService.getRandomDadJoke().then((response) => {
+        this.randomDadJoke = response.data;
+      });
+    }
   }
 };
 </script>
