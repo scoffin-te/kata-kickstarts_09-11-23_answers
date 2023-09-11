@@ -1,7 +1,6 @@
 <template>
     <div>
-        <h1>About Us</h1>
-        <h2>Contact us</h2>
+        <h2>{{ sectionTitle }}</h2>
         <ul>
             <li>Phone: 867-5309</li>
             <li>618 Gopher Road, Gravity Falls, Oregon</li>
@@ -10,6 +9,8 @@
     </div>
 </template>
 
-<style>
-
-</style>
+<script>
+    export default {
+        props: ['section-title']
+    }
+</script>

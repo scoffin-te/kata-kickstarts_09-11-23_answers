@@ -1,6 +1,6 @@
 <template>
     <div>
-        <contact-info />
+        <contact-info section-title="Contact Us" />
     </div>
 </template>
 
